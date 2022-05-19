@@ -1,0 +1,16 @@
+# functionality
+pandas==1.4.2
+
+# unit tests
+pytest==6.2.5
+pytest-cov==3.0.0
+
+# developer tools
+rope==0.21.1
+jedi==0.18.0
+autopep8==1.6.0
+black==21.10b0
+yapf==0.31.0
+flake8==4.0.1
+pylint==2.11.1
+isort==5.10.1
