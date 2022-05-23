@@ -9,3 +9,10 @@ lint:
 
 install:
 	pip3 install -r requirements.txt
+
+
+APPNAME=filegen
+TAG=latest
+
+build:
+	docker build -t ${APPNAME}:${TAG} .
