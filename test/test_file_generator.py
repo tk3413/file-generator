@@ -16,8 +16,8 @@ class TestFileGenerator(TestCase):
         self.assertTrue(test_file_gen_client.get_number_of_rows() == 10)
         self.assertTrue(test_file_gen_client.get_number_of_columns() == 100)
         test_file_gen_client_defaults = FileGenerator()
-        self.assertTrue(test_file_gen_client_defaults.get_number_of_rows() == 1)
-        self.assertTrue(test_file_gen_client_defaults.get_number_of_columns() == 1)
+        self.assertTrue(test_file_gen_client_defaults.get_number_of_rows() == 10)
+        self.assertTrue(test_file_gen_client_defaults.get_number_of_columns() == 10)
 
     @mock.patch("src.file_generator.FileGenerator.get_number_of_columns")
     @mock.patch("pandas.DataFrame")
@@ -29,3 +29,7 @@ class TestFileGenerator(TestCase):
         mock_dataframe.assert_called()
         mock_cwd.assert_called()
         mock_gen.assert_called()
+
+    def test_create_col(self):
+        col: str = FileGenerator().create_col_name(col_num=1)
+        assert col == "test_col1"
