@@ -10,6 +10,9 @@ lint:
 run:
 	python3 src/file_generator.py
 
+clean:
+	rm -r output/
+
 install:
 	pip3 install -r requirements.txt
 

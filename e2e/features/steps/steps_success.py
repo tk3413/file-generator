@@ -17,15 +17,15 @@ def step_impl(context):
 
 @when(u"the file generator app is called")
 def step_impl(context):
-    context.output_filepath = file_generator.FileGenerator(
+    context.full_output_filepath = file_generator.FileGenerator(
         number_of_columns=context.number_of_columns,
         number_of_rows=context.number_of_rows,
-    ).generate_file()
+    ).generate_file().file_path
 
 
 @then(u"a file is created in the output directory with the desired dimensions")
 def step_impl(context):
-    resulting_dataset: pandas.DataFrame = pandas.read_csv(context.output_filepath)
+    resulting_dataset: pandas.DataFrame = pandas.read_csv(context.full_output_filepath)
     if resulting_dataset is not None:
         assert len(resulting_dataset.index) == context.number_of_rows
     else:

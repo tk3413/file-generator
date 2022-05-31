@@ -12,8 +12,24 @@
 #+end_src
 *** invocation
 #+begin_src python
-    file_gen_client = FileGenerator()
-    generated_file_path: str = file_gen_client.generate_file()
+  file_gen_client = FileGenerator()
+  generated_file_path: str = file_gen_client.generate_file().file_path
+  assert(generated_file_path == "<pwd>/output/generated_test_file.csv"
+#+end_src
+*** result
+#+begin_src bash
+cat output/generated_test_file.csv
+,test_col1,test_col2,test_col3,test_col4,test_col5,test_col6,test_col7,test_col8,test_col9
+0,x,x,x,x,x,x,x,x,x
+1,x,x,x,x,x,x,x,x,x
+2,x,x,x,x,x,x,x,x,x
+3,x,x,x,x,x,x,x,x,x
+4,x,x,x,x,x,x,x,x,x
+5,x,x,x,x,x,x,x,x,x
+6,x,x,x,x,x,x,x,x,x
+7,x,x,x,x,x,x,x,x,x
+8,x,x,x,x,x,x,x,x,x
+9,x,x,x,x,x,x,x,x,x
 #+end_src
 
 ** Developer's Corner
