@@ -7,6 +7,9 @@ etest:
 lint:
 	./lint.sh
 
+run:
+	python3 src/file_generator.py
+
 install:
 	pip3 install -r requirements.txt
 
